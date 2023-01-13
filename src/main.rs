@@ -33,6 +33,20 @@ fn guessing_number() {
 
 fn main() {
     // guessing_number()
+    playground();
 }
 
-fn playground() {}
+fn playground() {
+    let string1 = String::from("hello");
+
+    log_string(&string1);
+    log_str(&string1)
+}
+
+fn log_string(string_to_log: &str) {
+    println!("{string_to_log}");
+}
+
+fn log_str(str_to_log: &str) {
+    println!("{str_to_log}");
+}
