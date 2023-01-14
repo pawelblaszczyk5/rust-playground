@@ -31,22 +31,11 @@ fn guessing_number() {
     }
 }
 
+// Beginner Series #2 Clock
+fn past(h: i32, m: i32, s: i32) -> i32 {
+    h * 60 * 60 * 1000 + m * 60 * 1000 + s * 1000
+}
+
 fn main() {
-    // guessing_number()
-    playground();
-}
-
-fn playground() {
-    let string1 = String::from("hello");
-
-    log_string(&string1);
-    log_str(&string1)
-}
-
-fn log_string(string_to_log: &str) {
-    println!("{string_to_log}");
-}
-
-fn log_str(str_to_log: &str) {
-    println!("{str_to_log}");
+    assert_eq!(past(0, 1, 1), 61000);
 }
