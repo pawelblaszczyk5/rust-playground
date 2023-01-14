@@ -36,6 +36,19 @@ fn past(h: i32, m: i32, s: i32) -> i32 {
     h * 60 * 60 * 1000 + m * 60 * 1000 + s * 1000
 }
 
+// Number of People in the Bus
+fn number(bus_stops: &[(i32, i32)]) -> i32 {
+    let mut sum = 0;
+
+    for (people_entered_amount, people_left_amount) in bus_stops {
+        sum += people_entered_amount;
+        sum -= people_left_amount;
+    }
+
+    return sum;
+}
+
 fn main() {
     assert_eq!(past(0, 1, 1), 61000);
+    assert_eq!(number(&[(10, 0), (3, 5), (5, 8)]), 5);
 }
