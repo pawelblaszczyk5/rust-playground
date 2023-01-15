@@ -49,11 +49,9 @@ fn number(bus_stops: &[(i32, i32)]) -> i32 {
 fn reverse_words(words: &str) -> String {
     words
         .split_whitespace()
-        .rfold(String::from(""), |result, new_word| -> String {
-            result + new_word + " "
-        })
-        .trim_end()
-        .to_string()
+        .rev()
+        .collect::<Vec<&str>>()
+        .join(" ")
 }
 
 fn main() {
